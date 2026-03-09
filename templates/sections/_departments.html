@@ -1,0 +1,50 @@
+{% load static %}
+<section id="departments" class="departments section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Bolimler</h2>
+    <p>Klinikamizda tomendegi bolimler bar.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row">
+      
+      <div class="col-lg-3">
+        <ul class="nav nav-tabs flex-column">
+          {% for dept in departments %}
+          <li class="nav-item">
+            <a class="nav-link {% if forloop.first %}active show{% endif %}" data-bs-toggle="tab" href="#dept-{{ dept.id }}">
+              {{ dept.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="tab-content">
+          {% for dept in departments %}
+          <div class="tab-pane {% if forloop.first %}active show{% endif %}" id="dept-{{ dept.id }}">
+            <div class="row">
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>{{ dept.name }}</h3>
+                <p class="fst-italic">{{ dept.description }}</p>
+              </div>
+              <div class="col-lg-4 text-center order-1 order-lg-2">
+                {% if dept.image %}
+                  <img src="{{ dept.image.url }}" alt="{{ dept.name }}" class="img-fluid">
+                {% else %}
+                  <img src="{% static 'img/about.jpg' %}" alt="{{ dept.name }}" class="img-fluid">
+
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% empty %}
+            <p>Magliwmat joq.</p>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

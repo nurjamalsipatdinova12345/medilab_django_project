@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section" style="padding: 120px 0;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0" style="border-radius: 20px;">
+          <div class="card-body p-5">
+            <h3 class="text-center mb-4" style="color: #1977cc; font-weight: bold;">Account yaratish</h3>
+
+            {% if error %}
+            <div class="alert alert-danger text-center" role="alert">
+              {{ error }}
+            </div>
+            {% endif %}
+
+            <form action="{% url 'signup' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <div class="form-floating">
+                    <input type="text" name="first_name" class="form-control" id="fName" placeholder="Name" required>
+                    <label for="fName">Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="form-floating">
+                    <input type="text" name="last_name" class="form-control" id="lName" placeholder="Familiya" required>
+                    <label for="lName">Last name</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control" id="uName" placeholder="Username" required>
+                <label for="uName">Username</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                <label for="email">Email </label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="password" name="password" class="form-control" id="pwd" placeholder="Parol" required>
+                <label for="pwd">Parol </label>
+              </div>
+
+              <button class="btn w-100 py-3 mt-3" type="submit" style="background: #1977cc; color: white; border-radius: 10px; font-weight: 600;">
+                Sign Up
+              </button>
+            </form>
+
+            <div class="text-center mt-3">
+                <p> akkauntiniz bar bolsa  <a href="{% url 'login' %}" style="color: #1977cc; text-decoration: none;">Kiriw</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

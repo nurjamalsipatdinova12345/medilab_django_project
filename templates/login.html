@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="section" style="padding: 120px 0;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+        <div class="card mb-3 shadow-sm" style="border-radius: 15px; border: none;">
+          <div class="card-body" style="padding: 30px;">
+            <div class="pt-4 pb-2 text-center">
+              <h5 class="card-title pb-0 fs-4" style="color: #1977cc; font-weight: 700;">kiriw</h5>
+              <p class="small">Username ham parolinizdi kiritin</p>
+            </div>
+            <form action="{% url 'login' %}", method="post" class="row g-3">
+              {% csrf_token %}
+              <div class="col-12">
+                <label class="form-label">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person"></i></span>
+                  <input type="text" name="username" class="form-control" required>
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <label class="form-label">Parol</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                  <input type="password" name="password" class="form-control" required>
+                </div>
+              </div>
+              {% if form.errors %}
+                <div class="col-12 text-danger mt-2 small">
+                  Username yamasa parol qate
+                </div>
+              {% endif %}
+              <div class="col-12 mt-4">
+                <button class="btn w-100" type="submit" style="background: #1977cc; color: #fff; border-radius: 50px; padding: 10px;">kiriw</button>
+              </div>
+              <div class="col-12 text-center mt-3">
+                <p class="small mb-0">Accountiniz joq bolsa registraciyadan otin <a href="{% url 'signup' %}" style="color: #1977cc;">sign up</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

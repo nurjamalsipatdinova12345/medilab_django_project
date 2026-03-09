@@ -1,0 +1,40 @@
+{% load static %}
+<section id="stats" class="stats section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fa-solid fa-user-doctor"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="{{ d_count }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Doctors</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fa-regular fa-hospital"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="{{ dep_count }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Departments</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fas fa-flask"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="{{ lab_count }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Research Labs</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fas fa-award"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="{{ award_count }}" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Awards</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

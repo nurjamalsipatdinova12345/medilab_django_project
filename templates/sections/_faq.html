@@ -1,0 +1,47 @@
+{% load static %}
+<!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Kop beriletugin sorawlar</h2>
+        <p>Sorawlarga juwaplar</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>Medilab qanday kompaniya?</h3>
+                <div class="faq-content">
+                  <p>Medilab med klinika.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+              {% for f in faq %}
+                <div class="faq-item">
+                  <h3>{{f.question}}</h3>
+                  <div class="faq-content">
+                    <p>{{ f.answer}}</p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div><!-- End Faq item-->
+              {% endfor %}
+
+
+
+            </div>
+
+          </div><!-- End Faq Column-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+

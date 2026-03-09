@@ -1,0 +1,25 @@
+{% load static %}
+ <section id="services" class="services section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>Klinikamizda tomendegi xizmetler bar</p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="row gy-4">
+          {% for servis in services %}
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="fas fa-heartbeat">{{servis.icon}}</i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>{{servis.title}}</h3>
+              </a>
+              <p>{{service.description}}</p>
+            </div>
+          </div><!-- End Service Item -->
+            {%endfor%}
+        </div>
+      </div>
+    </section><!-- /Services Section -->

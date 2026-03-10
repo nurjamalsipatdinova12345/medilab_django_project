@@ -36,3 +36,13 @@ class Gallery(models.Model):
         verbose_name_plural = "Galereya"
     def __str__(self):
         return f"suwret {self.id}"
+
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=150)
+    job = models.CharField(max_length=100)
+    comment = models.TextField()
+    image = models.ImageField(upload_to='testimonials/', blank=True, null=True)
+
+    def __str__(self):
+        return self.name

@@ -1,14 +1,9 @@
-from django.shortcuts import render, redirect
+
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from .forms import SignUpForm
-
-from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-
 def signup_view(request):
     if request.method == 'POST':
         f_name = request.POST.get('first_name')
@@ -18,8 +13,6 @@ def signup_view(request):
         password = request.POST.get('password')
         if User.objects.filter(username=u_name).exists():
             return render(request, 'signup.html', {'error': 'Bu username aldin qoyilgan'})
-
-
         user = User.objects.create_user(username=u_name, email=email, password=password)
         user.first_name = f_name
         user.last_name = l_name

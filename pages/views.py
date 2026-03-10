@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from hospital.models import Doctor, Department, Service
 from formalar.models import Appointment, Contact
-from .models import About, FAQ, Gallery
+from .models import About, FAQ, Gallery, Testimonial
 # Create your views here.
 def doctor_view(request):
     doctors = Doctor.objects.all()
@@ -12,6 +12,7 @@ def doctor_view(request):
     about=About.objects.last()
     gallery=Gallery.objects.all()
     faq=FAQ.objects.all()
+    testimonials=Testimonial.objects.all()
     doctors_count = doctors.count()
     depts_count = departments.count()
     research_labs = 12
@@ -25,6 +26,7 @@ def doctor_view(request):
         'about': about,
         'gallery': gallery,
         'faq': faq,
+        'testimonials': testimonials,
         'd_count': doctors_count,
         'dep_count': depts_count,
         'lab_count': research_labs,

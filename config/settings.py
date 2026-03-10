@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-rr0694y33$1vkr^g@l*_tx0h85$wox(ym0qvq!sm_95z!=vvw$
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https:/medilab-django-project.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://medilab-django-project.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'medilab-django-project.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['medilab-django-project.onrender.com']
 # Application definition
 
 INSTALLED_APPS = [
